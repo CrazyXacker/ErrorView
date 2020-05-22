@@ -11,3 +11,7 @@ android {
         versionName project.VERSION_NAME
     }
 }
+
+dependencies {
+    implementation 'androidx.core:core:1.2.0'
+}

@@ -30,6 +30,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.core.graphics.drawable.DrawableCompat;
+
 import java.util.Map;
 
 /**
@@ -170,6 +172,10 @@ public class ErrorView extends LinearLayout {
                 }
             }
         });
+    }
+
+    public void setTint(int color) {
+        DrawableCompat.setTint(mErrorImageView.getDrawable(), color);
     }
 
     /**
