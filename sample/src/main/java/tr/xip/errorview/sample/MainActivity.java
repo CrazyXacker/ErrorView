@@ -25,6 +25,8 @@ public class MainActivity extends Activity {
                     .setTitleColor(getResources().getColor(R.color.apptheme_primary))
                     .setSubtitle(getString(R.string.error_subtitle_failed_one_more_time))
                     .setRetryButtonText(getString(R.string.error_view_retry))
+                    .setRetryRightButtonText("Open in browser")
+                    .showRightRetryButton(true)
                     .setSecondSubtitle("Subtitle 2")
                     .setSecondRetryButtonText("Retry 2")
                     .setThirdSubtitle("Subtitle 3")

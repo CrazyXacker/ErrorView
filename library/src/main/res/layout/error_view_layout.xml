@@ -30,17 +30,41 @@
         android:textColor="@color/error_view_text_light"
         tools:text="Couldn\'t load items" />
 
-    <TextView
-        android:id="@+id/error_retry"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/error_view_retry_button_background"
-        android:padding="8dp"
-        android:text="@string/error_view_retry"
-        android:textColor="@color/error_view_text_dark"
-        android:textStyle="bold" />
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/error_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/error_view_retry_button_background"
+            android:padding="8dp"
+            android:text="@string/error_view_retry"
+            android:textColor="@color/error_view_text_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/error_retry_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/error_view_retry_button_background"
+            android:padding="8dp"
+            android:text="@string/error_view_retry"
+            android:textColor="@color/error_view_text_dark"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/error_second_subtitle"
