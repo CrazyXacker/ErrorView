@@ -50,7 +50,7 @@ public class ErrorView extends LinearLayout {
     private TextView mTitleTextView;
     private TextView mSubtitleTextView;
     private TextView mRetryButton;
-    private TextView mRetryRightButton;
+    private TextView mRightRetryButton;
     private TextView mSecondSubtitleTextView;
     private TextView mSecondRetryButton;
     private TextView mThirdSubtitleTextView;
@@ -94,7 +94,7 @@ public class ErrorView extends LinearLayout {
         mTitleTextView = findViewById(R.id.error_title);
         mSubtitleTextView = findViewById(R.id.error_subtitle);
         mRetryButton = findViewById(R.id.error_retry);
-        mRetryRightButton = findViewById(R.id.error_retry_right);
+        mRightRetryButton = findViewById(R.id.error_retry_right);
         mSecondSubtitleTextView = findViewById(R.id.error_second_subtitle);
         mSecondRetryButton = findViewById(R.id.error_second_retry);
         mThirdSubtitleTextView = findViewById(R.id.error_third_subtitle);
@@ -119,18 +119,18 @@ public class ErrorView extends LinearLayout {
         boolean showSecondSubtitle;
         boolean showThirdSubtitle;
         boolean showRetryButton;
-        boolean showRetryRightButton;
+        boolean showRightRetryButton;
         boolean showSecondRetryButton;
         boolean showThirdRetryButton;
 
         String retryButtonText;
-        String retryRightButtonText;
+        String rightRetryButtonText;
         String secondRetryButtonText;
         String thirdRetryButtonText;
         int retryButtonBackground;
-        int retryRightButtonBackground;
+        int rightRetryButtonBackground;
         int retryButtonTextColor;
-        int retryRightButtonTextColor;
+        int rightRetryButtonTextColor;
         int secondRetryButtonBackground;
         int secondRetryButtonTextColor;
         int thirdRetryButtonBackground;
@@ -161,11 +161,11 @@ public class ErrorView extends LinearLayout {
             retryButtonTextColor = a.getColor(R.styleable.ErrorView_ev_retryButtonTextColor,
                     getResources().getColor(R.color.error_view_text_dark));
 
-            showRetryRightButton = a.getBoolean(R.styleable.ErrorView_ev_showRightRetryButton, false);
-            retryRightButtonText = a.getString(R.styleable.ErrorView_ev_retryRightButtonText);
-            retryRightButtonBackground = a.getResourceId(R.styleable.ErrorView_ev_retryRightButtonBackground,
+            showRightRetryButton = a.getBoolean(R.styleable.ErrorView_ev_showRightRetryButton, false);
+            rightRetryButtonText = a.getString(R.styleable.ErrorView_ev_rightRetryButtonText);
+            rightRetryButtonBackground = a.getResourceId(R.styleable.ErrorView_ev_rightRetryButtonBackground,
                     R.drawable.error_view_retry_button_background);
-            retryRightButtonTextColor = a.getColor(R.styleable.ErrorView_ev_retryRightButtonTextColor,
+            rightRetryButtonTextColor = a.getColor(R.styleable.ErrorView_ev_rightRetryButtonTextColor,
                     getResources().getColor(R.color.error_view_text_dark));
 
             int alignInt = a.getInt(R.styleable.ErrorView_ev_subtitleAlignment, 1);
@@ -210,8 +210,8 @@ public class ErrorView extends LinearLayout {
                 mRetryButton.setText(retryButtonText);
             }
 
-            if (retryRightButtonText != null) {
-                mRetryRightButton.setText(retryRightButtonText);
+            if (rightRetryButtonText != null) {
+                mRightRetryButton.setText(rightRetryButtonText);
             }
 
             if (secondRetryButtonText != null) {
@@ -242,8 +242,8 @@ public class ErrorView extends LinearLayout {
                 mRetryButton.setVisibility(GONE);
             }
 
-            if (!showRetryRightButton) {
-                mRetryRightButton.setVisibility(GONE);
+            if (!showRightRetryButton) {
+                mRightRetryButton.setVisibility(GONE);
             }
 
             if (!showSecondRetryButton) {
@@ -261,8 +261,8 @@ public class ErrorView extends LinearLayout {
 
             mRetryButton.setTextColor(retryButtonTextColor);
             mRetryButton.setBackgroundResource(retryButtonBackground);
-            mRetryRightButton.setTextColor(retryRightButtonTextColor);
-            mRetryRightButton.setBackgroundResource(retryRightButtonBackground);
+            mRightRetryButton.setTextColor(rightRetryButtonTextColor);
+            mRightRetryButton.setBackgroundResource(rightRetryButtonBackground);
             mSecondRetryButton.setTextColor(secondRetryButtonTextColor);
             mSecondRetryButton.setBackgroundResource(secondRetryButtonBackground);
             mThirdRetryButton.setTextColor(thirdRetryButtonTextColor);
@@ -281,7 +281,7 @@ public class ErrorView extends LinearLayout {
             }
         });
 
-        mRetryRightButton.setOnClickListener(view -> {
+        mRightRetryButton.setOnClickListener(view -> {
             if (mRightListener != null) {
                 mRightListener.onRetry();
             }
@@ -313,6 +313,11 @@ public class ErrorView extends LinearLayout {
      */
     public ErrorView setOnRetryListener(RetryListener listener) {
         mListener = listener;
+        return this;
+    }
+
+    public ErrorView setRightOnRetryListener(RetryListener listener) {
+        mRightListener = listener;
         return this;
     }
 
@@ -631,8 +636,8 @@ public class ErrorView extends LinearLayout {
      *
      * @param text {@link java.lang.String} to use as retry button text.
      */
-    public ErrorView setRetryRightButtonText(String text) {
-        mRetryRightButton.setText(text);
+    public ErrorView setRightRetryButtonText(String text) {
+        mRightRetryButton.setText(text);
         return this;
     }
 
@@ -641,16 +646,16 @@ public class ErrorView extends LinearLayout {
      *
      * @param res string resource to be used as retry button text.
      */
-    public ErrorView setRetryRightButtonText(int res) {
-        mRetryRightButton.setText(res);
+    public ErrorView setRightRetryButtonText(int res) {
+        mRightRetryButton.setText(res);
         return this;
     }
 
     /**
      * Returns the current retry button text.
      */
-    public String getRetryRightButtonText() {
-        return mRetryRightButton.getText().toString();
+    public String getRightRetryButtonText() {
+        return mRightRetryButton.getText().toString();
     }
 
     /**
@@ -729,16 +734,16 @@ public class ErrorView extends LinearLayout {
      *
      * @param color int color to be used as text color.
      */
-    public ErrorView setRetryRightButtonTextColor(int color) {
-        mRetryRightButton.setTextColor(color);
+    public ErrorView setRightRetryButtonTextColor(int color) {
+        mRightRetryButton.setTextColor(color);
         return this;
     }
 
     /**
      * Returns the current retry button text color.
      */
-    public int getRetryRightButtonTextColor() {
-        return mRetryRightButton.getCurrentTextColor();
+    public int getRightRetryButtonTextColor() {
+        return mRightRetryButton.getCurrentTextColor();
     }
 
     /**
@@ -854,7 +859,7 @@ public class ErrorView extends LinearLayout {
      * Shows or hides the retry button.
      */
     public ErrorView showRightRetryButton(boolean show) {
-        mRetryRightButton.setVisibility(show ? VISIBLE : GONE);
+        mRightRetryButton.setVisibility(show ? VISIBLE : GONE);
         return this;
     }
 
@@ -862,7 +867,7 @@ public class ErrorView extends LinearLayout {
      * Indicates whether the retry button is visible.
      */
     public boolean isRetryRightButtonVisible() {
-        return mRetryRightButton.getVisibility() == VISIBLE;
+        return mRightRetryButton.getVisibility() == VISIBLE;
     }
 
     /**

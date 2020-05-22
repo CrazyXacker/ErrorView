@@ -23,15 +23,15 @@
         <attr name="ev_showSecondRetryButton" format="boolean" />
         <attr name="ev_showThirdRetryButton" format="boolean" />
         <attr name="ev_retryButtonText" format="string" />
-        <attr name="ev_retryRightButtonText" format="string" />
+        <attr name="ev_rightRetryButtonText" format="string" />
         <attr name="ev_secondRetryButtonText" format="string" />
         <attr name="ev_thirdRetryButtonText" format="string" />
         <attr name="ev_retryButtonBackground" format="reference" />
-        <attr name="ev_retryRightButtonBackground" format="reference" />
+        <attr name="ev_rightRetryButtonBackground" format="reference" />
         <attr name="ev_secondRetryButtonBackground" format="reference" />
         <attr name="ev_thirdRetryButtonBackground" format="reference" />
         <attr name="ev_retryButtonTextColor" format="color" />
-        <attr name="ev_retryRightButtonTextColor" format="color" />
+        <attr name="ev_rightRetryButtonTextColor" format="color" />
         <attr name="ev_secondRetryButtonTextColor" format="color" />
         <attr name="ev_thirdRetryButtonTextColor" format="color" />
         <attr name="ev_subtitleAlignment" format="enum">
