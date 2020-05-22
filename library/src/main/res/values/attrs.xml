@@ -8,15 +8,39 @@
         <attr name="ev_title" format="string" />
         <attr name="ev_titleColor" format="color" />
         <attr name="ev_subtitle" format="string" />
+        <attr name="ev_second_subtitle" format="string" />
+        <attr name="ev_third_subtitle" format="string" />
         <attr name="ev_subtitleColor" format="color" />
+        <attr name="ev_secondSubtitleColor" format="color" />
+        <attr name="ev_thirdSubtitleColor" format="color" />
         <attr name="ev_errorImage" format="reference" />
         <attr name="ev_showTitle" format="boolean" />
         <attr name="ev_showSubtitle" format="boolean" />
+        <attr name="ev_showSecondSubtitle" format="boolean" />
+        <attr name="ev_showThirdSubtitle" format="boolean" />
         <attr name="ev_showRetryButton" format="boolean" />
+        <attr name="ev_showSecondRetryButton" format="boolean" />
+        <attr name="ev_showThirdRetryButton" format="boolean" />
         <attr name="ev_retryButtonText" format="string" />
+        <attr name="ev_secondRetryButtonText" format="string" />
+        <attr name="ev_thirdRetryButtonText" format="string" />
         <attr name="ev_retryButtonBackground" format="reference" />
+        <attr name="ev_secondRetryButtonBackground" format="reference" />
+        <attr name="ev_thirdRetryButtonBackground" format="reference" />
         <attr name="ev_retryButtonTextColor" format="color" />
+        <attr name="ev_secondRetryButtonTextColor" format="color" />
+        <attr name="ev_thirdRetryButtonTextColor" format="color" />
         <attr name="ev_subtitleAlignment" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="ev_secondSubtitleAlignment" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="ev_thirdSubtitleAlignment" format="enum">
             <enum name="left" value="0" />
             <enum name="center" value="1" />
             <enum name="right" value="2" />
