@@ -56,6 +56,8 @@ public class ErrorView extends LinearLayout {
     private TextView mThirdRetryButton;
 
     private RetryListener mListener;
+    private RetryListener mSecondListener;
+    private RetryListener mThirdListener;
 
     public ErrorView(Context context) {
         this(context, null);
@@ -255,14 +257,14 @@ public class ErrorView extends LinearLayout {
         });
 
         mSecondRetryButton.setOnClickListener(view -> {
-            if (mListener != null) {
-                mListener.onSecondRetry();
+            if (mSecondListener != null) {
+                mSecondListener.onRetry();
             }
         });
 
         mThirdRetryButton.setOnClickListener(view -> {
-            if (mListener != null) {
-                mListener.onThirdRetry();
+            if (mThirdListener != null) {
+                mThirdListener.onRetry();
             }
         });
     }
@@ -280,6 +282,28 @@ public class ErrorView extends LinearLayout {
      */
     public ErrorView setOnRetryListener(RetryListener listener) {
         mListener = listener;
+        return this;
+    }
+
+    /**
+     * Attaches a listener that to the view that reports retry events.
+     *
+     * @param listener {@link tr.xip.errorview.ErrorView.RetryListener} to be notified when a retry
+     *                 event occurs.
+     */
+    public ErrorView setSecondOnRetryListener(RetryListener listener) {
+        mSecondListener = listener;
+        return this;
+    }
+
+    /**
+     * Attaches a listener that to the view that reports retry events.
+     *
+     * @param listener {@link tr.xip.errorview.ErrorView.RetryListener} to be notified when a retry
+     *                 event occurs.
+     */
+    public ErrorView setThirdOnRetryListener(RetryListener listener) {
+        mThirdListener = listener;
         return this;
     }
 
@@ -835,7 +859,5 @@ public class ErrorView extends LinearLayout {
 
     public interface RetryListener {
         void onRetry();
-        void onSecondRetry();
-        void onThirdRetry();
     }
 }
